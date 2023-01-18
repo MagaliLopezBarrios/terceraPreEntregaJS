@@ -1,5 +1,5 @@
-// REGISTRARSE
-const registro = prompt("¿Desea registrarse?");
+// REGISTRARSE --> LO CAMBIE POR EL FORMULARIO EN PAGINA "REGISTRARSE"
+/*const registro = prompt("¿Desea registrarse?");
 
 switch (registro){
     case"si":
@@ -16,10 +16,11 @@ switch (registro){
         alert("Debe indicar si o no");
         break;
 
-}
+}*/
 
 // ***** BUSCAR DISPONIBILIDAD *****
 // DECLARAR CANTIDAD DE PERSONAS
+
 if (registro == "si"){
     let adultos = parseInt(prompt("Cantidad de adultos"));
     let ninios = parseInt(prompt("Cantidad de niños"));
@@ -49,75 +50,101 @@ else{
 }
 
 
-// SELECCIONAR TIPO DE DEPARTAMENTO 
-//(boton monoambiente) 
-/*const monoambiente = 6000;
 
-//(boton 2 ambientes)
-const dosAmbientes = 9500;*/
-
-// BUSCAR FECHAS (presentar un calendario)
-
-
-// CANTIDAD DE NOCHES (como aun no se como se puede seleccionar fechas en calendario, voy a  solicitar "cantidad de noches")
-
-
-
-/*const nocheMonoambiente = 6000;
-const nocheDosAmbientes = 9500;*/
 let noches = parseInt(prompt("Ingrese cantidad de noches que se hospedará"));
 
 
 
 //OBJETOS
-class departamento {
-    constructor (nombre, precio){
-        this.nombre = nombre,toUpperCase ();
-        this.precio = parseFloat (precio);
-        this.alquilado = false;
-    }
+
+let persona = {nombre: 'Magali', apellido: 'Lopez Barrios', mail: 'maguilopezbarrios@hotmail.com'};
+
+console.log(persona.nombre + persona.apellido+ 'tiene el mail'+ persona.mail)
+
+let departamentoo = {nombre:'Monoambiente', tipo: '1 Ambiente', capacidad: '2 personas', precio: 10000};
+
+//FUNCIONES CONSTRUCTORAS
+function Persona (nombre, apellido, mail){
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.mail = mail;
 }
 
-const departamento1 = new departamento ("monoambiente", "10000");
-const departamento2 = new departamento ("dosAmbientes", "12000");
-departamento1.precioEstadia ();
-departamento2.precioEstadia ();
-departamento1.alquilar ();
+let persona1 = new Persona ('Mariano', 'Mazzini', 'mem_0013@hotmail.com');
+let persona2 = new Persona ('Veronica', 'Mazzini', 'veromazzini@gmail.com');
 
-console.log (departamento1.nombre)
-console.log (departamento1.precio)
+console.log(persona);
+console.log(persona1);
+console.log(persona2);
 
-console.log (departamento2 ["nombre"])
-console.log (departamento2 ["precio"])
+function Departamentoo (nombre, tipo, capacidad, precio){
+    this.nombre = nombre;
+    this.tipo = tipo;
+    this.capacidad = capacidad;
+    this.precio = precio;
+}
+
+let departamentoo1 = new Departamentoo ('Monoambiente', '1 Ambientes', '2 personas', 10000);
+let departamentoo2 = new Departamentoo ('1Contrafrente', '2 Ambientes', '4 personas', 12000);
+let departamentoo3 = new Departamentoo ('2Frente', '2 Ambientes', '4 personas', 12000);
+let departamentoo4 = new Departamentoo ('2Contrafrente', '2 Ambientes', '4 personas', 12000);
+
+console.log(departamentoo);
+console.log(departamentoo1);
+console.log(departamentoo2);
+console.log(departamentoo3);
+
+
 
 //OPERADOR IN y FOR IN
 
-console.log ("nombre" in departamento1);
+console.log ("nombre" in departamentoo1);
 
-for (const propiedad in departamento1){
-    console.log (departamento1) [propiedad];
+for (const propiedad in departamentoo1){
+    console.log (departamentoo1) [propiedad];
 }
+
+
+// CALCULAR PRECIO DE ESTADIA
+function obtenerNochesEstadia (){
+    noche = Number(prompt("Ingrese la cantidad de noches que se hospedara = 3, 4, 5, 6, 7, 8"));
+    if (!(noche === 3 || noche === 4 || noche === 5 || noche === 6 || noche === 7 || noche === 8 )){
+        alert ("Ingrese un numero de noches valido (3,4,5,6,7,8");
+    noche = obtenerNochesEstadia ();
+
+    }
+
+    return noche;
+}
+
+function obtenerPrecioEstadia() {
+    let noche = obtenerNochesEstadia ();
+    let precio = departamentoo.precio ();
+    let precioEstadia = obtenerPrecioEstadia (noche, precio);
+
+    alert ("El valor de su estadia es"+ precio * noche);
+
+}
+
 
 //ARRAY
-const dptos = ["plantaBaja","primeroContrafrentre", "segundoFrente", "segundoContrafrente"];
+let ubicacionDpto = ['plantaBaja','primeroContrafrente', 'segundoFrente', 'segundoContrafrente'];
 //acceso
-console.log (numeros [0])
+console.log (ubicacionDpto);
+
+console.log (ubicacionDpto.length);
+
+console.log (ubicacionDpto [1]);
+
+ubicacionDpto.push ('terceroFrente');
+console.log (ubicacionDpto);
+
 //recorrido
-const dptoss = ["plantaBaja","primeroContrafrentre", "segundoFrente", "segundoContrafrente"];
 for (let index = 0; index <3; index++){
-    alert (dptoss = [index]);
+    alert (dptos = [index]);
     
 }
-/*//CALCULAR COSTO DE ESTADIA
 
-let precioEstadia1 = 0;
-let precioEstadia2 = 0;
-function multiplicar (noches, monoambiente, dosAmbientes){
-    precioEstadia1 = noches * monoambiente;
-    alert("El precio de su estadia es de " + precioEstadia1)
-    precioEstadia2 = noches * dosAmbientes;
-    alert("El precio de su estadia es de " + precioEstadia2)
-}*/
 
    //FORMULARIO PAGINA "REGISTRARSE"
 let form=[];
