@@ -36,7 +36,7 @@ header nav ul li{
 /*-----FOOTER-----*/
 /*--aplico propiedades generales--*/
 .pie {
-
+    margin-top: 20px;
     background-color: #CCD3EB;
     width: 100%;
     display: flex;
