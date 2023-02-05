@@ -22,7 +22,7 @@ header {
 
 }
 
-header nav ul li{
+nav ul li a{
     color: black;
     list-style: none;
     text-decoration: none;

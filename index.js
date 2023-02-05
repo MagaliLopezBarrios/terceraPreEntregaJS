@@ -20,7 +20,7 @@ switch (registro){
 
 // ***** BUSCAR DISPONIBILIDAD *****
 // DECLARAR CANTIDAD DE PERSONAS
-
+/*
 if (registro == "si"){
     let adultos = parseInt(prompt("Cantidad de adultos"));
     let ninios = parseInt(prompt("Cantidad de niños"));
@@ -143,10 +143,10 @@ console.log (ubicacionDpto);
 for (let index = 0; index <3; index++){
     alert (dptos = [index]);
     
-}
+}*/
 
 
-   //FORMULARIO PAGINA "REGISTRARSE"
+   //FORMULARIO PAGINA "REGISTRARSE" (reemplaza a los "prompt usados en la entrega anterior para el registro")
 let form=[];
 let submitbutton=document.getElementById("submitInput");
 let todook=1;
@@ -168,3 +168,12 @@ submitbutton.onclick = () => {
     }
     
 }
+
+let objUsuario = {
+    nombre : 'Magali',
+    apellido : 'Lopez Barrios',
+    mail : 'maguilopezbarrios@hotmail.com',
+}
+
+localStorage.setItem ('usuario', JSON.stringify (objUsuario));
+console.log (localStorage.getItem ('usuario'));
